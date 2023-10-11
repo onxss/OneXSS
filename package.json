@@ -1,0 +1,47 @@
+{
+  "name": "onexss",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "wrangler:build": "npx @cloudflare/next-on-pages",
+    "wrangler:deploy": "npx wrangler pages deploy --project-name onxss --branch main .vercel/output/static/",
+    "wrangler:dev": "npx @cloudflare/next-on-pages && npx wrangler pages dev --ip '127.0.0.1' --port 5000 --log-level debug .vercel/output/static --compatibility-date=2022-11-30 --persist-to=/tmp/wrangler/state",
+    "wrangler:devimport": "wrangler d1 execute platformdb  --local --persist-to=/tmp/wrangler/state --file schema.sql",
+    "wrangler:devsql": "npx wrangler d1 execute platformdb  --local --persist-to=/tmp/wrangler/state --command",
+    "wrangler:import": "npx wrangler d1 execute platformdb --file schema.sql",
+    "wrangler:sql": "npx wrangler d1 execute platformdb --command"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.2.3",
+    "@ant-design/pro-components": "^2.6.10",
+    "@cloudflare/d1": "^1.4.1",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "antd": "^5.8.0",
+    "cookie": "^0.5.0",
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.4.10",
+    "next": "13.4.10",
+    "typescript": "4.9.3"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.6.0",
+    "@cloudflare/workers-types": "^4.20221111.1",
+    "@types/cookie": "^0.5.1",
+    "@types/js-cookie": "^3.0.3",
+    "better-sqlite3": "^7.6.2",
+    "vercel": "^32.0.0",
+    "webpack-bundle-analyzer": "^4.9.1",
+    "wrangler": "3.7.0"
+  },
+  "overrides": {
+    "@antv/g2": "4.2.8",
+    "@antv/g-base": "0.5.11",
+    "@antv/path-util": "2.0.15"
+  }
+}

@@ -1,0 +1,22 @@
+name = "OneXSS"
+
+compatibility_date = "2022-11-31"
+compatibility_flags = [ "nodejs_compat" ]
+node_compat = true
+usage_model = "bundled"
+minify = true
+send_metrics =false
+
+
+kv_namespaces = [
+    { binding = "JSKV", id = "KV的ID" , preview_id="KV的preview_id"},
+]
+
+
+d1_databases = [
+    {binding = "DB", database_name = "platform-db" , database_id = "D1数据库database_id",preview_id = "D1数据库preview_id"}
+]
+
+[vars]
+TOKEN_SALT = "Token生成盐,需要修改"
+PASSWORD_SALT = "密码加密盐,需要修改,部署后禁止改动"
